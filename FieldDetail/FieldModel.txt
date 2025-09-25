@@ -44,7 +44,7 @@ public FieldModel(Beam beam, PlanSetup plan)
     Y2 = beam.ControlPoints.Max(cp => cp.JawPositions.Y2) / 10.0;
     FieldY = Y2 - Y1;
     Isocenter = GetIsocenter(beam, plan);
-    SSD = beam.Meterset.Value;
+    SSD = beam.SSD/10.0;
     MU = beam.Meterset.Value;
     DRR = BuildDRR(beam);
 }
