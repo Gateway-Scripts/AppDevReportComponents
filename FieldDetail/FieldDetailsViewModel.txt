@@ -1,0 +1,15 @@
+ public List<FieldModel> Fields { get; set; }
+
+ public FieldModel SelectedField { get; set; }
+
+ public FieldViewModel(PlanSetup plan)
+ 
+ {
+     Fields = new List<FieldModel>();
+    
+     foreach(var beam in plan.Beams.Where(b => !b.IsSetupField))
+     {
+         Fields.Add(new FieldModel(beam, plan));
+     }
+ 
+ }

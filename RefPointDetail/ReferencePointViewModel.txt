@@ -1,0 +1,15 @@
+   private ExternalPlanSetup ExternalPlanSetup { get; set; }
+   public ObservableCollection<ReferencePointModel> LRefPoints { get; set; }
+   public ReferencePointViewModel(PlanSetup ps)
+   {
+       ExternalPlanSetup = ps as ExternalPlanSetup;
+
+       LRefPoints = new ObservableCollection<ReferencePointModel>();
+
+       // Construct list of reference points
+       foreach (var rp in ExternalPlanSetup.ReferencePoints)
+       {
+           LRefPoints.Add(new ReferencePointModel(rp, ps));
+       }
+
+   }

@@ -1,18 +1,17 @@
- //Properties
- public string PlanId { get; set; }
- public string PlanName { get; set; }
- public string CourseId { get; set; }
- public string ApprovalStatus { get; set; }
- public string PlanType { get; set; }
- public string PlanIntent { get; set; }
-
- //Constructor to set plan information.
- public PlanInfoViewModel(PlanSetup plan)
- {
-     PlanId = plan.Id;
-     PlanName = plan.Name;
-     CourseId = plan.Course.Id;
-     ApprovalStatus = plan.ApprovalStatus.ToString();
-     PlanType = plan.PlanType.ToString();
-     PlanIntent = plan.PlanIntent.ToString();
- }
+//Implement ViewModel Properties
+public string PatientId { get; set; }
+public string PatientLastName { get; set; }
+public string PatientFirstName { get; set; }
+public string DateOfBirth { get; set; }
+public string Hospital { get; set; }
+public string PrimaryOncologist { get; set; }
+//Constructor to set the patient information.
+public PatientInfoViewModel(Patient patient)
+{
+    PatientId = patient.Id;
+    PatientLastName = patient.LastName;
+    PatientFirstName = patient.FirstName;
+    DateOfBirth = patient.DateOfBirth == null ? "No DOB" : patient.DateOfBirth.Value.ToShortDateString();
+    Hospital = patient.Hospital.Id;
+    PrimaryOncologist = patient.PrimaryOncologistName;
+}
