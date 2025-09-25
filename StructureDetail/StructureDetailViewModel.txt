@@ -1,0 +1,9 @@
+ public List<StructurePropertyModel> Structures { get; set; }
+ public StructureDetailViewModel(StructureSet structureSet, PlanningItem plan)
+ {
+     Structures = new List<StructurePropertyModel>();
+     foreach (Structure structure in structureSet.Structures.Where(st => st.DicomType == "ORGAN" || st.DicomType.Contains("TV")))
+     {
+         Structures.Add(new StructurePropertyModel(structure, plan));
+     }
+ }

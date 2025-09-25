@@ -1,0 +1,73 @@
+<Grid.RowDefinitions>
+    <RowDefinition Height="Auto"/>
+    <RowDefinition Height="Auto"/>
+    <RowDefinition Height="Auto"/>
+</Grid.RowDefinitions>
+      
+<!-- Header Row -->
+<Grid Grid.Row="1">
+    <Grid.ColumnDefinitions>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+        <ColumnDefinition Width="*"/>
+    </Grid.ColumnDefinitions>
+
+    <Border BorderBrush="Black" BorderThickness="0,0,0,1">
+        <TextBlock Text="Structure Id" FontWeight="Bold" Margin="20,5,5,5" TextWrapping="Wrap"/>
+    </Border>
+    <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="1">
+        <TextBlock Text="Volume [cc]" FontWeight="Bold" Margin="5" TextWrapping="Wrap"/>
+    </Border>
+    <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="2">
+        <TextBlock Text="DICOM Type" FontWeight="Bold" Margin="5" TextWrapping="Wrap"/>
+    </Border>
+    <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="3">
+        <TextBlock Text="Min Dose" FontWeight="Bold" Margin="5" TextWrapping="Wrap"/>
+    </Border>
+    <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="4">
+        <TextBlock Text="Mean Dose" FontWeight="Bold" Margin="5" TextWrapping="Wrap"/>
+    </Border>
+    <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="5">
+        <TextBlock Text="Max Dose" FontWeight="Bold" Margin="5" TextWrapping="Wrap"/>
+    </Border>
+</Grid>
+
+<!-- Data Rows -->
+<ItemsControl ItemsSource="{Binding Structures}" Grid.Row="2">
+    <ItemsControl.ItemTemplate>
+        <DataTemplate>
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Border BorderBrush="Black" BorderThickness="0,0,0,1">
+                    <TextBlock Margin="20,5,5,0" Text="{Binding StructureId}" TextWrapping="Wrap"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="1">
+                    <TextBlock Margin="0,5,0,0" Text="{Binding Volume}" TextWrapping="Wrap"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="2">
+                    <TextBlock Margin="0,5,0,0" Text="{Binding Type}" TextWrapping="Wrap"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="3">
+                    <TextBlock Margin="0,5,0,0" Text="{Binding MinDose}" TextWrapping="Wrap"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="4">
+                    <TextBlock Margin="0,5,0,0" Text="{Binding MeanDose}" TextWrapping="Wrap"/>
+                </Border>
+                <Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="5">
+                    <TextBlock Margin="0,5,0,0" Text="{Binding MaxDose}" TextWrapping="Wrap"/>
+                </Border>
+            </Grid>
+        </DataTemplate>
+    </ItemsControl.ItemTemplate>
+</ItemsControl>
