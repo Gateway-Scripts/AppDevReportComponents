@@ -21,7 +21,7 @@ public string CTOrientation { get; set; }
 
 public string ImagingDeviceId { get; set; }
 
-public CTInfoViewModel(Image img)
+public CTImageViewModel(Image img)
 {
     //CtId = $"Show Id {ctDetails.bShowId}\nShow acq date {ctDetails.bShowAcquisitionDateTime}";
     // Harvest data from CT
