@@ -25,7 +25,6 @@ public double MU { get; set; }
 public BitmapSource DRR { get; set; }
 public FieldModel(Beam beam, PlanSetup plan)
 {
-    _beam = beam;
     FieldID = beam.Id;
     FieldName = beam.Name;
     MachineID = beam.TreatmentUnit.Id;
@@ -44,7 +43,7 @@ public FieldModel(Beam beam, PlanSetup plan)
     Y2 = beam.ControlPoints.Max(cp => cp.JawPositions.Y2) / 10.0;
     FieldY = Y2 - Y1;
     Isocenter = GetIsocenter(beam, plan);
-    SSD = beam.SSD/10.0;
+    SSD = beam.Meterset.Value;
     MU = beam.Meterset.Value;
     DRR = BuildDRR(beam);
 }

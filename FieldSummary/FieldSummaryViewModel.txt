@@ -1,0 +1,17 @@
+ public List<FieldSummaryModel> FieldProperties { get; set; }
+ public FieldSummaryViewModel(PlanSetup plan)
+ {
+     FieldProperties = new List<FieldSummaryModel>();
+     SetFieldProperties(plan);
+ }
+
+ private void SetFieldProperties(PlanSetup plan)
+ {
+     var beams = plan.Beams;
+     
+     foreach (var beam in beams.OrderBy(b => b.IsSetupField).ThenBy(b => b.BeamNumber))//setup fields go to the bottom.
+     {
+         FieldSummaryModel fieldDisplay = new FieldSummaryModel(beam);
+         FieldProperties.Add(fieldDisplay);
+     }
+ }
