@@ -1,0 +1,6 @@
+public string PropertyName { get; set; }
+public string AriaValue { get; set; }
+public bool bHideEmpty { get; set; }
+public int AriaColumnSpan { get; set; }
+public string EclipseValue { get; set; }
+public bool bVisibility { get; set; }
