@@ -1,0 +1,7 @@
+
+    public enum ShiftDirectionEnum
+    {
+        XDir,
+        YDir,
+        ZDir
+    }

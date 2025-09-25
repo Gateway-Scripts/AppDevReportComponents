@@ -1,0 +1,48 @@
+<Grid.RowDefinitions>
+    <RowDefinition Height="Auto"/>
+    <RowDefinition Height="Auto"/>
+</Grid.RowDefinitions>
+<Grid.ColumnDefinitions>
+    <ColumnDefinition Width="*"/>
+    <ColumnDefinition Width="*"/>
+    <ColumnDefinition Width="*"/>
+
+</Grid.ColumnDefinitions>
+<!--#region Patient-->
+<Border BorderBrush="Black" BorderThickness="0,0,0,1">
+    <StackPanel Margin="5">
+        <TextBlock Text="Plan Id:" FontWeight="Bold"/>
+        <TextBlock Text="{Binding PlanId}" Margin="5,5,0,0"/>
+    </StackPanel>
+</Border>
+<Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="1">
+    <StackPanel Margin="5">
+        <TextBlock Text="Plan Name: " FontWeight="Bold"/>
+        <TextBlock Text="{Binding PlanName}" Margin="5,5,0,0"/>
+    </StackPanel>
+</Border>
+<Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="2">
+    <StackPanel Margin="5">
+        <TextBlock Text="Course Id: " FontWeight="Bold"/>
+        <TextBlock Text="{Binding CourseId}" Margin="5,5,0,0"/>
+    </StackPanel>
+</Border>
+<Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="0" Grid.Row="1">
+    <StackPanel Margin="5">
+        <TextBlock Text="Approval Status: " FontWeight="Bold"/>
+        <TextBlock Text="{Binding ApprovalStatus}" Margin="5,5,0,0"/>
+    </StackPanel>
+</Border>
+<Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="1" Grid.Row="1">
+    <StackPanel  Margin="5">
+        <TextBlock Text="Plan Type: " FontWeight="Bold"/>
+        <TextBlock Text="{Binding PlanType}" Margin="5,5,0,0"/>
+    </StackPanel>
+</Border>
+<Border BorderBrush="Black" BorderThickness="0,0,0,1" Grid.Column="2" Grid.Row="1">
+    <StackPanel Margin="5">
+        <TextBlock Text="Plan Intent: " FontWeight="Bold"/>
+        <TextBlock Text="{Binding PlanIntent}" Margin="5,5,0,0"/>
+    </StackPanel>
+</Border>
+<!--#endregion-->
