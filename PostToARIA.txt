@@ -1,0 +1,10 @@
+ OpenFileDialog file = new OpenFileDialog();
+            file.Filter = "PDF (*.pdf)|*.pdf";
+            if (file.ShowDialog() == true)
+            {
+                var BinaryContent = File.ReadAllBytes(file.FileName);
+
+                CustomInsertDocumentsParameter.PostDocumentData(PatientInfoViewModel.PatientId, _user,
+                    BinaryContent, "Plan Report",
+                    new VMS.OIS.ARIALocal.WebServices.Document.Contracts.DocumentType { DocumentTypeDescription = "Treatment Plan Report" });
+            }
