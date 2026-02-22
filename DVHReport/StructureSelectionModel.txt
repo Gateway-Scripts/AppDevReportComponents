@@ -1,0 +1,33 @@
+ //check to see if this requires INotifyPropertyChanged.
+ private bool _isSelected;
+ private EventHelper _eventHelper;
+
+ public bool IsSelected
+ {
+     get { return _isSelected; }
+     set 
+     { 
+         _isSelected = value;
+         UpdatePlot();
+     }
+ }
+
+ private void UpdatePlot()
+ {
+     if (_eventHelper != null)
+     {
+         _eventHelper.Publish<StructureSelectionModel>("StructureSelectionChanged", this);
+     }
+ }
+
+ public string StructureId { get;  set; }
+ public string DicomType { get; internal set; }
+
+ public StructureSelectionModel(EventHelper eventHelper)
+ {
+     _eventHelper = eventHelper;
+ }
+ public StructureSelectionModel()
+ {
+     
+ }

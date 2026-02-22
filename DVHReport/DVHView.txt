@@ -1,0 +1,13 @@
+ <DockPanel>
+     <StackPanel DockPanel.Dock="Left">
+         <TextBlock Text="Structures: " FontWeight="Bold"/>
+         <ItemsControl ItemsSource="{Binding Structures}">
+             <ItemsControl.ItemTemplate>
+                 <DataTemplate>
+                     <CheckBox Content="{Binding StructureId}" IsChecked="{Binding IsSelected}"/>
+                 </DataTemplate>
+             </ItemsControl.ItemTemplate>
+         </ItemsControl>
+     </StackPanel>
+ <oxy:PlotView Model="{Binding DVHPlot}" DockPanel.Dock="Right"/>
+ </DockPanel>
