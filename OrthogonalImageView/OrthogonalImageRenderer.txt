@@ -111,6 +111,7 @@ public static class OrthogonalRenderer
                 // Overlay dose distribution with color wash
                 if (includeDose && plan.Dose != null)
                 {
+			plan.DoseValuePresentation = DoseValuePresentation.Absolute;
                     double rxDose = CalculatePrescriptionDose(plan);
                     DrawDoseOverlay(pBackBufferBytes, byteStride, xSize, ySize,
                         plan.Dose, image, rxDose, sliceIndex, flipHorizontal);

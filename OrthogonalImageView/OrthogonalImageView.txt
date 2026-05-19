@@ -9,7 +9,7 @@
         <ColumnDefinition Width="*"/>
     </Grid.ColumnDefinitions>
     <TextBlock Text="Isocenter Orthogonal View" FontSize="16" FontWeight="Bold" HorizontalAlignment="Center" Grid.ColumnSpan="2"/>
-    <Image Grid.Row="1" Grid.RowSpan="2" Source="{Binding TransverseImage}">
+    <Image Grid.Row="1" Grid.ColumnSpan="2" Source="{Binding TransverseImage}">
 
     </Image>
     <Image Grid.Row="2" Grid.Column="0" Source="{Binding FrontalImage}"/>
