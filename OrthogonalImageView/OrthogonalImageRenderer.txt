@@ -799,7 +799,7 @@ public static class OrthogonalRenderer
         try
         {
             Assembly assembly = Assembly.GetExecutingAssembly();
-            string resourcePrefix = "OneClickPrint.Resources.cosmo.";
+            string resourcePrefix = "treatmentplanreport.resources.";
             string imageOrientation = String.Empty;
             bool flipImage = false;
 
